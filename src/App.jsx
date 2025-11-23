@@ -1,6 +1,7 @@
 import "./App.css";
 import Movies from "../movies_rnexgr.json";
 import LogoNetflix from "./img/logo.png";
+import Category from "./components/Category";
 
 function App() {
   return (
@@ -10,19 +11,12 @@ function App() {
       </header>
 
       <main>
-        {Movies.map((CategoryofMovie, index) => (
-          <div className="Element">
-            <h2>{CategoryofMovie.category}</h2>
-            <div className="allMovies">
-              {CategoryofMovie.images.map((MoviesUrl, MoviesIndex) => (
-                <img
-                  key={MoviesIndex}
-                  src={MoviesUrl}
-                  alt={`${CategoryofMovie} ${MoviesIndex}`}
-                />
-              ))}
-            </div>
-          </div>
+        {Movies.map((categoryObj, index) => (
+          <Category
+            key={index}
+            category={categoryObj.category}
+            images={categoryObj.images}
+          />
         ))}
       </main>
     </div>

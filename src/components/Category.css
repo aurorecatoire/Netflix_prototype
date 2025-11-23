@@ -1,0 +1,30 @@
+/* ----- Conteneur d'une catégorie ----- */
+.Element {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 50px;
+}
+
+/* ----- Liste d’images défilante (carrousel horizontal) ----- */
+.allMovies {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+}
+
+.allMovies::-webkit-scrollbar {
+  display: none; /* Cache la scrollbar sur Chrome/Safari */
+}
+
+/* ----- Images des films ----- */
+.Element img {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  margin-right: 10px;
+  margin-top: 20px;
+  flex-shrink: 0;
+}
